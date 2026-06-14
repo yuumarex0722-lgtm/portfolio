@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PORTFOLIO | NOSHITA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cursor"></div>
+<div class="cursor"></div>
+<nav>
+  <div class="logo">NOSHITA.</div>
+  <ul class="nav-menu">
+    <li><a href="index.html">TOP</a></li>
+    <li><a href="portfolio.html">PORTFOLIO</a></li>
+    <li><a href="profile.html">PROFILE</a></li>
+    <li><a href="service.html">SERVICE</a></li>
+    <li><a href="contact.html">CONTACT</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  </nav>
+
+ <main>
+  <section class="portfolio-section">
+    <h2 class="portfolio-category">LANDSCAPE</h2>
+    <div class="portfolio-grid" id="landscape-grid"></div>
+  </section>
+
+  <section class="portfolio-section">
+    <h2 class="portfolio-category">PORTRAIT</h2>
+    <div class="portfolio-grid" id="portrait-grid"></div>
+  </section>
+
+  <section class="portfolio-section">
+    <h2 class="portfolio-category">OTHER</h2>
+    <div class="portfolio-grid" id="other-grid"></div>
+  </section>
+</main>
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-bg"></div>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="">
+</div>
+
+
+<script>
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  function loadPhotos(folder, count, gridId) {
+    const grid = document.getElementById(gridId);
+    const total = { landscape: 42, portrait: 111, other: 59 };
+    
+    let nums = [];
+    for (let i = 1; i <= total[folder]; i++) nums.push(i);
+    nums = shuffle(nums).slice(0, count);
+
+    nums.forEach(num => {
+      const item = document.createElement('div');
+      item.className = 'portfolio-item';
+      item.innerHTML = `<img src="images/${folder}/${folder}${num}.jpeg" alt="">`;
+      grid.appendChild(item);
+    });
+  }
+
+  loadPhotos('landscape', 30, 'landscape-grid');
+  loadPhotos('portrait', 30, 'portrait-grid');
+  loadPhotos('other', 30, 'other-grid');
+  const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+
+document.querySelectorAll('.portfolio-item img').forEach(img => {
+  img.addEventListener('click', () => {
+    lightboxImg.src = img.src;
+    lightbox.classList.add('active');
+  });
+});
+
+lightbox.addEventListener('click', () => {
+  lightbox.classList.remove('active');
+});
+const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.clientX - 10 + 'px';
+  cursor.style.top = e.clientY - 10 + 'px';
+});
+
+document.addEventListener('mouseenter', () => {
+  cursor.style.opacity = '1';
+});
+
+document.addEventListener('mouseleave', () => {
+  cursor.style.opacity = '0';
+});
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
+</script>
+</body>
+</html>

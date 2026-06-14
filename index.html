@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cursor"></div>
+
+<<nav>
+  <div class="logo">NOSHITA.</div>
+  <ul class="nav-menu">
+    <li><a href="#">TOP</a></li>
+    <li><a href="portfolio.html">PORTFOLIO</a></li>
+    <li><a href="service.html">SERVICE</a></li>
+    <li><a href="profile.html">PROFILE</a></li>
+    <li><a href="contact.html">CONTACT</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+</nav>
+
+<main>
+  <section class="hero"></section>
+
+  <section class="works" id="works">
+    <div class="works-grid">
+      <div class="work-item w1"><img src="images/work01.JPG" alt=""></div>
+      <div class="work-item w2"><img src="images/work02.jpg" alt=""></div>
+      <div class="work-item w3"><img src="images/work03.JPG" alt=""></div>
+      <div class="work-item w4"><img src="images/work04.JPG" alt=""></div>
+      <div class="work-item w5"><img src="images/work05.jpg" alt=""></div>
+      <div class="work-item w6"><img src="images/work06.jpg" alt=""></div>
+      <div class="text-item vertical t1"><span>君と見た景色を</span></div>
+      <div class="work-item w7"><img src="images/work07.jpg" alt=""></div>
+      <div class="work-item w8"><img src="images/work08.JPG" alt=""></div>
+      <div class="work-item w9"><img src="images/work09.JPG" alt=""></div>
+      <div class="work-item w10"><img src="images/work010.JPG" alt=""></div>
+      <div class="work-item w11"><img src="images/work011.JPG" alt=""></div>
+      <div class="text-item t2"><span>記憶よりも鮮明な記録で</span></div>
+      <div class="work-item w12"><img src="images/work012.JPG" alt=""></div>
+      <div class="work-item w13"><img src="images/work013.jpg" alt=""></div>
+      <div class="work-item w14"><img src="images/work014.jpg" alt=""></div>
+      <div class="work-item w15"><img src="images/work015.JPG" alt=""></div>
+      <div class="work-item w16"><img src="images/work016.JPG" alt=""></div>
+      <div class="work-item w17"><img src="images/work017.JPG" alt=""></div>
+      <div class="work-item w18"><img src="images/work018.JPG" alt=""></div>
+      <div class="work-item w19"><img src="images/work019.jpg" alt=""></div>
+      <div class="work-item w20"><img src="images/work020.jpg" alt=""></div>
+      <div class="text-item vertical t3"><span>僕らは共有できる。</span></div>
+      <div class="work-item w21"><img src="images/work021.jpg" alt=""></div>
+      <div class="work-item w22"><img src="images/work022.jpg" alt=""></div>
+      <div class="work-item w23"><img src="images/work023.jpg" alt=""></div>
+      <div class="work-item w24"><img src="images/work024.jpg" alt=""></div>
+      <div class="text-item t4"><span>人生を遊び尽くそう。</span></div>
+      <div class="work-item w25"><img src="images/work025.jpg" alt=""></div>
+      <div class="work-item w26"><img src="images/work026.jpg" alt=""></div>
+      <div class="work-item w27"><img src="images/work027.jpg" alt=""></div>
+      <div class="work-item w28"><img src="images/work028.jpg" alt=""></div>
+      <div class="work-item w29"><img src="images/work029.jpg" alt=""></div>
+      <div class="work-item w30"><img src="images/work030.jpg" alt=""></div>
+      <div class="work-item w31"><img src="images/work031.jpg" alt=""></div>
+      <div class="work-item w32"><img src="images/work032.jpg" alt=""></div>
+      <div class="work-item w33"><img src="images/work033.JPG" alt=""></div>
+      <div class="work-item w34"><img src="images/work034.jpg" alt=""></div>
+      <div class="work-item w35"><img src="images/work035.JPG" alt=""></div>
+      <div class="work-item w36"><img src="images/work036.jpg" alt=""></div>
+    </div>
+  </section>
+</main>
+
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-bg"></div>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.work-item').forEach(item => {
+    observer.observe(item);
+  });
+
+  document.querySelectorAll('.text-item').forEach(item => {
+    observer.observe(item);
+  });
+
+  const cursor = document.querySelector('.cursor');
+
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX - 10 + 'px';
+    cursor.style.top = e.clientY - 10 + 'px';
+  });
+
+  document.addEventListener('mouseenter', () => {
+    cursor.style.opacity = '1';
+  });
+
+  document.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '0';
+  });
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  document.querySelectorAll('.work-item img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+  const hamburger = document.getElementById('hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>
