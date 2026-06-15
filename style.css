@@ -664,7 +664,18 @@ button[type="submit"]:hover {
   }
 
   /* Group 1 */
+.t1 span, .t2 span, .t3 span, .t4 span {
+    font-size: 7px;
+    padding: 3px 2px;
+    letter-spacing: 0.15em;
+  }
 
+  .service-hero,
+  .service-content,
+  .service-note {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 @media (max-width: 768px) {
   .hamburger {
