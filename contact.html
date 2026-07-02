@@ -110,6 +110,45 @@ const navMenu = document.querySelector('.nav-menu');
 hamburger.addEventListener('click', () => {
   navMenu.classList.toggle('active');
 });
+
+const simParams = new URLSearchParams(location.search);
+if (simParams.get('sim')) {
+  const summary = simParams.get('summary') || '';
+  const purpose = simParams.get('purpose') || '';
+  const menu = simParams.get('menu') || '';
+  const price = simParams.get('price') || '';
+  const area = simParams.get('area') || '';
+  const u24 = simParams.get('u24') === '1';
+
+  const subjectInput = document.querySelector('input[name="subject"]');
+  if (subjectInput && !subjectInput.value) {
+    subjectInput.value = '料金シミュレーターからの問い合わせ';
+  }
+
+  const lines = ['【料金シミュレーターで選んだ内容】'];
+  if (summary) {
+    lines.push(summary);
+  } else {
+    if (purpose) lines.push('目的：' + purpose);
+    if (menu) lines.push('内容：' + menu);
+    if (price) lines.push('目安金額：' + price);
+    if (area) lines.push('撮影エリア：' + area);
+    if (u24) lines.push('U24割引：希望（24歳以下）');
+  }
+  lines.push('');
+  lines.push('▼ご希望の日程や、聞きたいことがあれば自由にどうぞ');
+  lines.push('');
+
+  const messageArea = document.querySelector('textarea[name="message"]');
+  if (messageArea && !messageArea.value) {
+    messageArea.value = lines.join('\n');
+  }
+
+  const check = simParams.get('check') || menu;
+  document.querySelectorAll('input[name="plan"]').forEach(cb => {
+    if (check && check.includes(cb.value)) cb.checked = true;
+  });
+}
 </script>
 </body>
 </html>

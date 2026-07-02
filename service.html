@@ -27,65 +27,201 @@
   <main>
   <section class="service-hero">
     <p class="service-concept">僕らは共有できる。記憶よりも鮮明な記録で。</p>
-    <p class="service-sub">その人に合わせた撮影スタイルで臨みます。<br>自然体からポージングまで、お気軽にお任せください。</p>
+    <p class="service-sub">写真や映像は、目的ではなく手段です。<br>「残したい」「伸ばしたい」「伝えたい」— 目的に合わせて、3つのサービスを用意しています。</p>
   </section>
 
   <section class="service-content">
-    <h2>PHOTOGRAPHY</h2>
+    <div class="value-nav">
+      <a href="#memory" class="value-card">
+        <p class="value-en">MEMORY</p>
+        <p class="value-jp">残す</p>
+        <p class="value-desc">今しかない時間を、未来へ残す撮影。</p>
+        <p class="value-items">七五三 / 家族 / ペット / ウェディング / 日常</p>
+        <p class="value-price">¥10,000 / 1時間〜</p>
+      </a>
+      <a href="#growth" class="value-card">
+        <p class="value-en">GROWTH</p>
+        <p class="value-jp">伸ばす</p>
+        <p class="value-desc">伝わることで、事業も活動も前に進む。</p>
+        <p class="value-items">作品撮影 / 商品・店舗 / HP / SNS / 映像</p>
+        <p class="value-price">¥44,000〜</p>
+      </a>
+      <a href="#story" class="value-card">
+        <p class="value-en">STORY</p>
+        <p class="value-jp">動かす</p>
+        <p class="value-desc">人と物語を、記録として届ける。</p>
+        <p class="value-items">ドキュメンタリー / 密着 / 作家紹介 / 地域</p>
+        <p class="value-price">ご相談</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="service-content" id="estimate">
+    <h2>PRICE — 料金</h2>
+    <p class="service-sub">選ぶだけで、料金と内訳がわかります。<br>詳しい内容は、下の各サービスをご覧ください。</p>
+
+    <div class="sim-group">
+      <p class="sim-label">目的は？</p>
+      <div class="sim-pills" id="sim-purpose"></div>
+    </div>
+
+    <div class="sim-group" id="sim-menu-group" style="display: none;">
+      <p class="sim-label" id="sim-menu-label"></p>
+      <div class="sim-pills" id="sim-menu"></div>
+    </div>
+
+    <div class="sim-group" id="sim-detail-group" style="display: none;">
+      <p class="sim-label" id="sim-detail-label"></p>
+      <div class="sim-pills" id="sim-detail"></div>
+    </div>
+
+    <div class="sim-group" id="sim-hours-group" style="display: none;">
+      <p class="sim-label">撮影時間は？</p>
+      <div class="sim-pills" id="sim-hours"></div>
+    </div>
+
+    <div class="sim-group" id="sim-meeting-group" style="display: none;">
+      <p class="sim-label">打ち合わせは？</p>
+      <div class="sim-pills" id="sim-meeting"></div>
+    </div>
+
+    <div class="sim-group" id="sim-costume-group" style="display: none;">
+      <p class="sim-label">衣装は？</p>
+      <div class="sim-pills" id="sim-costume"></div>
+    </div>
+
+    <div class="sim-group" id="sim-usage-group" style="display: none;">
+      <p class="sim-label">用途は？（複数選べます）</p>
+      <div class="sim-pills" id="sim-usage"></div>
+    </div>
+
+    <div class="sim-group" id="sim-option-group" style="display: none;">
+      <p class="sim-label">撮影エリアは？</p>
+      <div class="sim-pills" id="sim-area"></div>
+      <label class="checkbox-label sim-u24" id="sim-u24-wrap" style="display: none;">
+        <input type="checkbox" id="sim-u24"> U24（24歳以下・30%引き）
+      </label>
+    </div>
+
+    <div class="sim-group" id="sim-free-group" style="display: none;">
+      <p class="sim-label">どんな撮影にしたいですか？（任意）</p>
+      <textarea id="sim-free" class="sim-free" rows="3" placeholder="イメージ・場所・雰囲気・気になることなど、自由にどうぞ。"></textarea>
+    </div>
+
+    <div class="sim-result" id="sim-result" style="display: none;">
+      <p class="sim-label">内訳</p>
+      <div id="sim-breakdown"></div>
+      <p class="sim-label bd-gap">合計（税込）</p>
+      <p class="sim-price" id="sim-price"></p>
+      <p class="sim-note" id="sim-note"></p>
+      <a href="contact.html" class="sim-cta" id="sim-cta">この内容で問い合わせる</a>
+      <a href="#schedule" class="story-link sim-sub-link">空き状況を見る</a>
+    </div>
+
+    <div class="sim-result" id="sim-story" style="display: none;">
+      <p class="sim-note">Storyは、企画の内容によって形も金額も大きく変わります。<br>まずはあなたの想いを聞かせてください。そこから一緒に設計します。</p>
+      <a href="contact.html?sim=1&purpose=Story%EF%BC%88%E5%8B%95%E3%81%8B%E3%81%99%EF%BC%89&menu=%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%82%BF%E3%83%AA%E3%83%BC%E3%83%BB%E5%AF%86%E7%9D%80%E3%81%AA%E3%81%A9%EF%BC%88%E8%A6%81%E7%9B%B8%E8%AB%87%EF%BC%89" class="sim-cta">想いを聞かせる</a>
+    </div>
+  </section>
+
+  <section class="service-content" id="memory">
+    <h2>MEMORY — 残す</h2>
+    <p class="limited-badge">撮影は毎月20件限定</p>
+    <p class="service-sub">今しかない時間を、未来へ残す撮影。<br>何を撮るかではなく、「どれだけの時間を残すか」で決まるシンプルな料金です。<br>一件一件と丁寧に向き合うため、撮影は毎月20件までとしています。</p>
+    <table class="service-table">
+      <tr>
+        <th>撮影時間</th>
+        <th>価格</th>
+        <th>納品枚数（目安）</th>
+      </tr>
+      <tr>
+        <td>1時間</td>
+        <td>¥10,000</td>
+        <td>20枚</td>
+      </tr>
+      <tr>
+        <td>2時間</td>
+        <td>¥20,000</td>
+        <td>40枚</td>
+      </tr>
+      <tr>
+        <td>3時間</td>
+        <td>¥30,000</td>
+        <td>60枚</td>
+      </tr>
+      <tr>
+        <td>4時間</td>
+        <td>¥40,000</td>
+        <td>80枚</td>
+      </tr>
+      <tr>
+        <td>5時間以降</td>
+        <td>1時間ごと ＋¥10,000</td>
+        <td>ご相談</td>
+      </tr>
+    </table>
+    <p class="discount">ウェディング・七五三・家族・子ども・ペット・日常・イベント — 何を撮っても料金は同じです。</p>
+    <p class="discount">料金に含まれるもの：撮影／セレクト／色調整・レタッチ／データ納品</p>
+
+    <h3>オプション</h3>
+    <table class="service-table">
+      <tr>
+        <td>事前打ち合わせ・イメージ設計</td>
+        <td>＋¥5,000</td>
+      </tr>
+      <tr>
+        <td>追加データ（20枚ごと）</td>
+        <td>＋¥5,000</td>
+      </tr>
+      <tr>
+        <td>特急納品（3日以内）</td>
+        <td>＋¥5,000</td>
+      </tr>
+      <tr>
+        <td>当日延長（30分ごと）</td>
+        <td>＋¥5,000</td>
+      </tr>
+      <tr>
+        <td>アルバム制作</td>
+        <td>ご相談</td>
+      </tr>
+      <tr>
+        <td>スタジオ利用</td>
+        <td>スタジオ代実費</td>
+      </tr>
+    </table>
+    <p class="discount">U24 — 24歳以下の方はすべてのメニューを30%引きでご利用いただけます。</p>
+    <p class="discount">※集客・販売・広告など、商用利用を目的とした撮影はGrowthにて承ります。</p>
+    <p class="value-duty">僕が責任を持つこと — 10年後も見返したくなる記録を残すこと。</p>
+  </section>
+
+  <section class="service-content" id="growth">
+    <h2>GROWTH — 伸ばす</h2>
+    <p class="service-sub">写真・映像・Webは、すべて手段です。<br>あなたの魅力が「伝わる状態」をつくることで、事業や活動を前に進めます。</p>
     <table class="service-table">
       <tr>
         <th>メニュー</th>
         <th>価格</th>
-        <th>納品枚数</th>
+        <th>納品</th>
       </tr>
       <tr>
-        <td>ウェディング（前撮り・当日）</td>
-        <td>¥99,000〜</td>
-        <td>80〜100枚</td>
-      </tr>
-      <tr>
-       <td>クライアントワーク</td>
+        <td>クライアントワーク（商品・店舗・採用など）</td>
         <td>¥44,000〜（撮影内容により変更）</td>
         <td>要相談</td>
       </tr>
       <tr>
-        <td>ポートフォリオ撮影(作品撮影など)</td>
+        <td>ポートフォリオ撮影（作品撮影など）</td>
         <td>¥45,000〜</td>
-        <td>20〜30枚</td>
-      </tr>
-      <tr>
-        <td>七五三撮影（ロケーション撮影）</td>
-        <td>¥28,000〜</td>
-        <td>30〜50枚</td>
-      </tr>
-      <tr>
-        <td>DAILY（何気ない日常の記念に）</td>
-        <td>¥18,000〜</td>
-        <td>20〜30枚</td>
-      </tr>
-      <tr>
-        <td>スタジオ撮影</td>
-        <td>¥15,000〜</td>
-        <td>20〜30枚</td>
-      </tr>
-      <tr>
-        <td>ペット撮影</td>
-        <td>¥10,000〜</td>
         <td>20〜30枚</td>
       </tr>
       <tr>
         <td>映像制作</td>
         <td>¥99,000〜</td>
         <td>3分程度</td>
-      </tr> 
+      </tr>
     </table>
-    <p class="discount">U24 — 24歳以下の方はすべてのメニューを30%引きでご利用いただけます。</p>
-    <p class="discount">金額、撮影枚数は目安です。撮影時間や内容により変動いたします。お気軽にご相談ください。</p>
-     <p class="discount">金額はすべて税込価格となっております。</p>
-  </section>
 
-  <section class="service-content">
-    <h2>ARTIST PLAN</h2>
+    <h3>FOR ARTIST — 作家・クリエイターの方へ</h3>
     <p class="service-sub">作品の魅力を、ちゃんと伝わる形に残します。<br>ギャラリー運営の経験を活かし、作品の見せ方まで一緒に考えます。</p>
     <table class="service-table">
       <tr>
@@ -110,58 +246,81 @@
       </tr>
     </table>
     <p class="discount">U24 — 上記価格より30%引きでご利用いただけます。</p>
-  </section>
-<section class="service-content">
-  <h2>BUSINESS PLAN</h2>
-  <p class="service-sub">デジタルで集客し、ビジネスを加速させます。<br>補助金を活用することで、費用を抑えながらスタートできます。</p>
-  <table class="service-table">
-    <tr>
-      <th>プラン</th>
-      <th>内容</th>
-      <th>価格</th>
-    </tr>
-    <tr>
-      <td>スタータープラン</td>
-      <td>HP制作＋SNS用撮影（30投稿）</td>
-      <td>¥200,000</td>
-    </tr>
-    <tr>
-      <td>スタンダードプラン</td>
-      <td>HP制作＋ネットショップ構築＋SNS用撮影（30投稿）</td>
-      <td>¥300,000</td>
-    </tr>
-    <tr>
-      <td>フルサポートプラン</td>
-      <td>HP制作＋ネットショップ構築＋SNS用撮影（30投稿）＋映像1本（3分以内）</td>
-      <td>¥400,000</td>
-    </tr>
-    <tr>
-      <td>写真追加オプション</td>
-      <td>SNS用撮影（30投稿）追加</td>
-      <td>¥50,000</td>
-    </tr>
-  </table>
 
-  <h2 style="margin-top: 40px;">月額運営サポート</h2>
-  <table class="service-table">
-    <tr>
-      <th>内容</th>
-      <th>価格</th>
-    </tr>
-    <tr>
-      <td>HP運営</td>
-      <td>¥15,000/月</td>
-    </tr>
-    <tr>
-      <td>ショップ運営</td>
-      <td>販売数に応じる</td>
-    </tr>
-    <tr>
-      <td>SNS運用</td>
-      <td>¥30,000/月</td>
-    </tr>
-  </table>
-</section>
+    <h3>FOR BUSINESS — 企業・お店の方へ</h3>
+    <p class="service-sub">デジタルで集客し、ビジネスを加速させます。<br>補助金を活用することで、費用を抑えながらスタートできます。</p>
+    <table class="service-table">
+      <tr>
+        <th>プラン</th>
+        <th>内容</th>
+        <th>価格</th>
+      </tr>
+      <tr>
+        <td>スタータープラン</td>
+        <td>HP制作＋SNS用撮影（30投稿）</td>
+        <td>¥200,000</td>
+      </tr>
+      <tr>
+        <td>スタンダードプラン</td>
+        <td>HP制作＋ネットショップ構築＋SNS用撮影（30投稿）</td>
+        <td>¥300,000</td>
+      </tr>
+      <tr>
+        <td>フルサポートプラン</td>
+        <td>HP制作＋ネットショップ構築＋SNS用撮影（30投稿）＋映像1本（3分以内）</td>
+        <td>¥400,000</td>
+      </tr>
+      <tr>
+        <td>写真追加オプション</td>
+        <td>SNS用撮影（30投稿）追加</td>
+        <td>¥50,000</td>
+      </tr>
+    </table>
+
+    <h3>月額運営サポート</h3>
+    <table class="service-table">
+      <tr>
+        <th>内容</th>
+        <th>価格</th>
+      </tr>
+      <tr>
+        <td>HP運営</td>
+        <td>¥15,000/月</td>
+      </tr>
+      <tr>
+        <td>ショップ運営</td>
+        <td>販売数に応じる</td>
+      </tr>
+      <tr>
+        <td>SNS運用</td>
+        <td>¥30,000/月</td>
+      </tr>
+    </table>
+    <p class="value-duty">僕が責任を持つこと — あなたの魅力や価値が、伝わる状態をつくること。</p>
+  </section>
+
+  <section class="service-content" id="story">
+    <h2>STORY — 動かす</h2>
+    <p class="service-sub">人や場所の物語を、映像と写真で届けます。<br>ドキュメンタリー・密着・作家紹介・地域プロジェクトなど、企画から一緒につくります。<br>内容により都度お見積りしますので、まずは想いをお聞かせください。</p>
+    <a href="portfolio.html" class="story-link">作品を見る</a>
+    <p class="value-duty">僕が責任を持つこと — 人の心に残る物語を、形にすること。</p>
+  </section>
+
+  <section class="service-content">
+    <h2>PRICE POLICY — 価格の考え方</h2>
+    <p class="service-sub">撮るという行為は同じでも、目的によって僕が負う責任は大きく異なります。<br>だから、価格の決め方そのものを目的ごとに変えています。<br><br>Memoryは「時間」で、明朗に。<br>Growthは「内容と責任の範囲」で、お見積りを。<br>Storyは「企画」ごとに、一緒に設計を。</p>
+    <p class="discount">金額、撮影枚数は目安です。撮影時間や内容により変動いたします。お気軽にご相談ください。</p>
+    <p class="discount">金額はすべて税込価格となっております。</p>
+  </section>
+
+  <section class="service-content" id="schedule">
+    <h2>SCHEDULE — 空き状況</h2>
+    <p class="service-sub">◯の日はご予約いただけます。<br>状況は随時更新しています。最新の空きは、お問い合わせ時にご確認ください。</p>
+    <div class="cal-wrap" id="cal-wrap"></div>
+    <p class="discount">◯ 空きあり ／ × ご予約済み・撮影不可</p>
+    <a href="contact.html" class="sim-cta">空いている日で相談する</a>
+  </section>
+
   <section class="service-note">
     <h2>NOTE</h2>
     <div class="note-group">
@@ -169,6 +328,7 @@
       <ul>
         <li>平日・土日祝、どちらでも対応しています。</li>
         <li>撮影時間は、撮りたい雰囲気に合わせて一緒に決めましょう。</li>
+        <li>撮影時間は「集合から解散まで」でカウントします。移動やお着替えの時間も含みます。</li>
         <li>ヘアメイクや小道具はご自身でのご準備をお願いしています。</li>
         <li>撮影許可が必要な場所は、事前にお客様側での手配をお願いしています。</li>
       </ul>
@@ -178,6 +338,8 @@
       <ul>
         <li>セレクト・編集済みのデータでお渡しします。</li>
         <li>枚数によってはご希望に沿えない場合がございます。事前にご相談ください。</li>
+        <li>お急ぎの方は、特急納品（3日以内・＋¥5,000）をご利用いただけます。</li>
+        <li>撮影データは、作例としてSNSやホームページに掲載する場合があります。掲載を希望されない方は、無料でご指定いただけます。</li>
       </ul>
     </div>
     <div class="note-group">
@@ -193,6 +355,14 @@
       <ul>
         <li>前日：料金の50%</li>
         <li>当日：料金の100%</li>
+        <li>天候による延期は無料で振替します。キャンセル料はかかりません。</li>
+      </ul>
+    </div>
+    <div class="note-group">
+      <h3>お支払いについて</h3>
+      <ul>
+        <li>当日現金、または事前振込にてお願いしています。</li>
+        <li>法人のお客様は請求書払いに対応します。</li>
       </ul>
     </div>
     <p class="service-last">載せている金額はあくまで目安です。予算や内容によって柔軟に対応するので、まずは気軽に話しかけてください。</p>
@@ -231,7 +401,6 @@
   </div>
 </section>
 </main>
-  </main>
 <script>
   const cursor = document.querySelector('.cursor');
 
@@ -253,6 +422,307 @@ const navMenu = document.querySelector('.nav-menu');
 hamburger.addEventListener('click', () => {
   navMenu.classList.toggle('active');
 });
+
+const yen = n => '¥' + n.toLocaleString('ja-JP');
+
+const SIM_PURPOSES = [
+  { id: 'memory', label: 'Memory（残す）' },
+  { id: 'growth', label: 'Growth（伸ばす）' },
+  { id: 'story',  label: 'Story（動かす）' }
+];
+
+const SIM_SCENES = [
+  { id: 'wedding', label: 'ウェディング', check: 'ウェディング', detailLabel: '当日ですか？前撮りですか？', details: ['前撮り', '当日', '当日＋前撮り', 'これから相談したい'] },
+  { id: '753', label: '七五三', check: '七五三', detailLabel: 'お子さまの年齢は？', details: ['3歳', '5歳', '7歳', 'きょうだい一緒に'] },
+  { id: 'family', label: '家族・子ども', check: '日常撮影', detailLabel: 'お子さまの年齢は？', details: ['0〜2歳', '3〜6歳', '7歳以上', '大人だけ・三世代など'] },
+  { id: 'pet', label: 'ペット', check: 'ペット撮影', detailLabel: 'どんな子と撮りますか？', details: ['犬', '猫', 'その他の動物'] },
+  { id: 'daily', label: '日常・記念日', check: '日常撮影', detailLabel: null, details: null },
+  { id: 'event', label: 'イベント', check: 'その他', detailLabel: null, details: null },
+  { id: 'other', label: 'その他', check: 'その他', detailLabel: null, details: null }
+];
+
+const SIM_HOURLY_RATE = 10000;
+const SIM_HOURS = [1, 2, 3, 4, 5, 6];
+
+const SIM_MEETING = [
+  { label: '撮影のみでOK', price: 0 },
+  { label: '事前打ち合わせ・イメージ設計から', price: 5000 }
+];
+
+const SIM_COSTUME = ['自分で用意する', '相談したい', '衣装なし・普段着'];
+
+const SIM_WHO = [
+  { id: 'artist', label: '作家・クリエイター' },
+  { id: 'biz', label: '企業・お店・事業者' }
+];
+
+const SIM_GROWTH = {
+  artist: [
+    { label: '作品撮影のみ', plan: 'Photo Plan', price: 55000, u24: true, check: 'アーティスト向けプラン', includes: ['作品撮影（20〜30点）', 'セレクト・レタッチ', 'データ納品'] },
+    { label: '作品撮影＋ポートフォリオサイト', plan: 'Portfolio Plan', price: 150000, u24: true, check: 'アーティスト向けプラン', includes: ['作品撮影', 'ポートフォリオサイト制作', '公開までサポート'] },
+    { label: '作品撮影＋サイト＋ネットショップ', plan: 'FULL', price: 220000, u24: true, check: 'アーティスト向けプラン', includes: ['作品撮影', 'ポートフォリオサイト制作', 'ネットショップ構築'] }
+  ],
+  biz: [
+    { label: '撮影のみ（商品・店舗・採用など）', plan: 'クライアントワーク', price: 44000, approx: true, check: 'クライアントワーク', includes: ['ヒアリング', '撮影', 'セレクト・レタッチ', 'データ納品'] },
+    { label: '映像をつくりたい', plan: '映像制作', price: 99000, approx: true, check: 'その他', includes: ['企画・構成', '撮影', '編集（3分程度）'] },
+    { label: '撮影＋HP制作', plan: 'スタータープラン', price: 200000, check: 'その他', includes: ['HP制作', 'SNS用撮影（30投稿分）'] },
+    { label: '撮影＋HP＋ネットショップ', plan: 'スタンダードプラン', price: 300000, check: 'その他', includes: ['HP制作', 'ネットショップ構築', 'SNS用撮影（30投稿分）'] },
+    { label: '撮影＋HP＋ショップ＋映像', plan: 'フルサポートプラン', price: 400000, check: 'その他', includes: ['HP制作', 'ネットショップ構築', 'SNS用撮影（30投稿分）', '映像1本（3分以内）'] }
+  ]
+};
+
+const SIM_USAGE = ['HP', 'SNS', '広告', 'ネットショップ', '採用', 'メニュー・印刷物', 'まだ決めていない'];
+
+const SIM_AREAS = [
+  { label: '大分県内', note: '' },
+  { label: '九州内', note: '九州内は車移動のため、高速代・ガソリン代を実費でいただきます。' },
+  { label: '九州外', note: '九州外は交通費・宿泊費を別途お見積りします。' }
+];
+
+const simState = {
+  purpose: null, scene: null, sceneDetail: null, hours: null,
+  meeting: SIM_MEETING[0], costume: SIM_COSTUME[0],
+  who: null, plan: null, area: SIM_AREAS[0], u24: false
+};
+
+function simPills(container, items, getLabel, onSelect) {
+  container.innerHTML = '';
+  items.forEach(item => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'sim-pill';
+    btn.textContent = getLabel(item);
+    btn.addEventListener('click', () => {
+      [...container.children].forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      onSelect(item);
+    });
+    container.appendChild(btn);
+  });
+}
+
+function simPillsMulti(container, items, onChange) {
+  container.innerHTML = '';
+  items.forEach(item => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'sim-pill';
+    btn.textContent = item;
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('active');
+      onChange();
+    });
+    container.appendChild(btn);
+  });
+}
+
+function simShow(id, on) {
+  document.getElementById(id).style.display = on ? 'block' : 'none';
+}
+
+function simFirstActive(id) {
+  const el = document.getElementById(id);
+  if (el.firstChild) el.firstChild.classList.add('active');
+}
+
+function simRender() {
+  const P = simState.purpose;
+  if (!P) return;
+
+  const allGroups = ['sim-menu-group', 'sim-detail-group', 'sim-hours-group', 'sim-meeting-group', 'sim-costume-group', 'sim-usage-group', 'sim-option-group', 'sim-free-group', 'sim-result'];
+
+  if (P.id === 'story') {
+    allGroups.forEach(id => simShow(id, false));
+    simShow('sim-story', true);
+    return;
+  }
+
+  simShow('sim-story', false);
+  simShow('sim-menu-group', true);
+
+  const isMemory = P.id === 'memory';
+  document.getElementById('sim-menu-label').textContent =
+    isMemory ? '何を撮る？（何を撮っても基本料金は同じです）' : 'どなたですか？';
+
+  let ready = false;
+  let rows = [];
+  let total = 0;
+  let approx = false;
+  let checkLabel = 'その他';
+  let summaryLines = [];
+
+  if (isMemory) {
+    simShow('sim-usage-group', false);
+    const s = simState.scene;
+    const needDetail = !!(s && s.details);
+    simShow('sim-detail-group', needDetail);
+    if (needDetail) document.getElementById('sim-detail-label').textContent = s.detailLabel;
+
+    const detailOk = s && (!s.details || simState.sceneDetail);
+    simShow('sim-hours-group', !!detailOk);
+    const hoursOk = detailOk && simState.hours;
+    simShow('sim-meeting-group', !!hoursOk);
+    simShow('sim-costume-group', !!hoursOk);
+
+    if (hoursOk) {
+      ready = true;
+      const base = simState.hours * SIM_HOURLY_RATE;
+      rows.push(['撮影（' + simState.hours + '時間）', yen(base)]);
+      total = base;
+      if (simState.meeting.price) {
+        rows.push(['事前打ち合わせ・イメージ設計', '＋' + yen(simState.meeting.price)]);
+        total += simState.meeting.price;
+      }
+      checkLabel = s.check;
+      const sceneText = s.label + (simState.sceneDetail ? '（' + simState.sceneDetail + '）' : '');
+      summaryLines = [
+        '内容：' + sceneText + '／' + simState.hours + '時間',
+        '打ち合わせ：' + simState.meeting.label,
+        '衣装：' + simState.costume
+      ];
+    }
+  } else {
+    ['sim-hours-group', 'sim-meeting-group', 'sim-costume-group'].forEach(id => simShow(id, false));
+    const w = simState.who;
+    simShow('sim-detail-group', !!w);
+    if (w) document.getElementById('sim-detail-label').textContent = '必要なものは？';
+    simShow('sim-usage-group', !!(w && simState.plan));
+
+    if (w && simState.plan) {
+      ready = true;
+      const p = simState.plan;
+      p.includes.forEach(inc => rows.push([inc, '']));
+      approx = !!p.approx;
+      total = p.price;
+      rows.push([p.plan + ' 一式', yen(p.price) + (approx ? '〜' : '')]);
+      checkLabel = p.check;
+      const usage = [...document.querySelectorAll('#sim-usage .sim-pill.active')].map(b => b.textContent);
+      summaryLines = [
+        'お立場：' + w.label,
+        '内容：' + p.label + '（' + p.plan + '）',
+        '用途：' + (usage.length ? usage.join('・') : '未選択')
+      ];
+    }
+  }
+
+  if (!ready) {
+    simShow('sim-option-group', false);
+    simShow('sim-free-group', false);
+    simShow('sim-result', false);
+    return;
+  }
+
+  simShow('sim-option-group', true);
+  simShow('sim-free-group', true);
+
+  const u24Eligible = isMemory || !!(simState.plan && simState.plan.u24);
+  document.getElementById('sim-u24-wrap').style.display = u24Eligible ? 'flex' : 'none';
+  if (!u24Eligible) {
+    simState.u24 = false;
+    document.getElementById('sim-u24').checked = false;
+  }
+
+  if (simState.u24) {
+    const disc = Math.round(total * 0.3);
+    rows.push(['U24割引（30%）', '−' + yen(disc)]);
+    total -= disc;
+  }
+
+  document.getElementById('sim-breakdown').innerHTML =
+    rows.map(r => '<div class="bd-row"><span>' + r[0] + '</span><span>' + r[1] + '</span></div>').join('');
+
+  const priceText = yen(total) + (approx ? '〜' : '');
+  document.getElementById('sim-price').textContent = priceText;
+
+  const notes = [];
+  if (isMemory) {
+    notes.push('納品枚数の目安は' + (simState.hours * 20) + '枚（1時間あたり20枚）。追加データは20枚ごと＋¥5,000です。');
+    notes.push('当日の延長は30分ごと＋¥5,000。6時間を超える場合はご相談ください。');
+  } else {
+    notes.push('内容を伺ったうえで、正式なお見積りをお出しします。');
+  }
+  if (simState.area.note) notes.push(simState.area.note);
+  document.getElementById('sim-note').innerHTML = notes.join('<br>');
+
+  const freeText = document.getElementById('sim-free').value.trim();
+  const summary = ['目的：' + P.label].concat(summaryLines);
+  summary.push('エリア：' + simState.area.label);
+  if (simState.u24) summary.push('U24割引：希望（24歳以下）');
+  summary.push('料金：' + priceText);
+  summary.push('内訳：');
+  rows.forEach(r => summary.push('・' + r[0] + (r[1] ? '：' + r[1] : '')));
+  if (freeText) summary.push('ご希望メモ：' + freeText);
+
+  const params = new URLSearchParams({ sim: '1', summary: summary.join('\n'), check: checkLabel });
+  document.getElementById('sim-cta').href = 'contact.html?' + params.toString();
+
+  simShow('sim-result', true);
+}
+
+simPills(document.getElementById('sim-purpose'), SIM_PURPOSES, p => p.label, p => {
+  simState.purpose = p;
+  simState.scene = null;
+  simState.sceneDetail = null;
+  simState.hours = null;
+  simState.meeting = SIM_MEETING[0];
+  simState.costume = SIM_COSTUME[0];
+  simState.who = null;
+  simState.plan = null;
+  simState.u24 = false;
+  document.getElementById('sim-u24').checked = false;
+
+  if (p.id === 'memory') {
+    simPills(document.getElementById('sim-menu'), SIM_SCENES, s => s.label, s => {
+      simState.scene = s;
+      simState.sceneDetail = null;
+      simState.hours = null;
+      if (s.details) {
+        simPills(document.getElementById('sim-detail'), s.details, d => d, d => {
+          simState.sceneDetail = d;
+          simRender();
+        });
+      }
+      simPills(document.getElementById('sim-hours'), SIM_HOURS,
+        h => h + '時間　' + yen(h * SIM_HOURLY_RATE),
+        h => { simState.hours = h; simRender(); });
+      simRender();
+    });
+    simPills(document.getElementById('sim-meeting'), SIM_MEETING,
+      m => m.label + (m.price ? '　＋¥5,000' : ''),
+      m => { simState.meeting = m; simRender(); });
+    simFirstActive('sim-meeting');
+    simPills(document.getElementById('sim-costume'), SIM_COSTUME, c => c,
+      c => { simState.costume = c; simRender(); });
+    simFirstActive('sim-costume');
+  } else if (p.id === 'growth') {
+    simPills(document.getElementById('sim-menu'), SIM_WHO, w => w.label, w => {
+      simState.who = w;
+      simState.plan = null;
+      simPills(document.getElementById('sim-detail'), SIM_GROWTH[w.id],
+        g => g.label + '　' + yen(g.price) + (g.approx ? '〜' : ''),
+        g => { simState.plan = g; simRender(); });
+      simRender();
+    });
+    simPillsMulti(document.getElementById('sim-usage'), SIM_USAGE, simRender);
+  }
+  simRender();
+});
+
+simPills(document.getElementById('sim-area'), SIM_AREAS, a => a.label, a => {
+  simState.area = a;
+  simRender();
+});
+simFirstActive('sim-area');
+
+document.getElementById('sim-u24').addEventListener('change', (e) => {
+  simState.u24 = e.target.checked;
+  simRender();
+});
+
+document.getElementById('sim-free').addEventListener('input', () => {
+  if (simState.purpose) simRender();
+});
 </script>
+<script src="schedule.js"></script>
 </body>
 </html>
